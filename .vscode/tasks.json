@@ -1,0 +1,47 @@
+{
+  "tasks": [
+        {
+          "type": "cppbuild",
+          "label": "C/C++: gcc build",
+          "command": "D:\\Program Files\\mingw64\\bin\\gcc.exe",
+          "args": [
+            "-fdiagnostics-color=always",
+            "-g",
+            "${fileDirname}\\*.c" ,
+            "${fileDirname}\\Headers\\*.h",
+            "${fileDirname}\\Sources\\*.c",
+            "-o",
+            "${fileDirname}\\${fileBasenameNoExtension}.exe"
+          ],
+          "options": {
+            "cwd": "${workspaceFolder}", //gcc 命令应该在你的项目源代码所在的目录下执行
+          },
+          "problemMatcher": ["$gcc"],
+          "group": {
+            "kind": "build",
+            "isDefault": true
+          },
+          "detail": "调试器生成的任务"
+        },
+        {
+          "type": "cppbuild",
+          "label": "C/C++: make build",
+          "command": "D:\\Program Files\\mingw64\\bin\\mingw32-make.exe",
+          "args": [
+            "-f", // 指定 Makefile 的路径
+            "${workspaceFolder}\\Makefile", // Makefile 的相对路径
+            "all"
+          ],
+          "options": {
+            "cwd": "${workspaceFolder}"
+          },
+          "problemMatcher": ["$gcc"],
+          "group": {
+            "kind": "build",
+            "isDefault": true
+          },
+          "detail": "使用 make 构建"
+        }
+      ],
+      "version": "2.0.0"
+    }
